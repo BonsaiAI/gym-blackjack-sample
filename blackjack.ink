@@ -1,5 +1,6 @@
 simulator blackjack_simulator(BlackJackConfig)
-   send schema  (GameState)
+    control (Action)
+    state (GameState)
 end
 schema GameState
     Int8{0:31} current_sum,
