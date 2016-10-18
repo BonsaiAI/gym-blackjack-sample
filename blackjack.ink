@@ -1,7 +1,3 @@
-simulator blackjack_simulator(BlackJackConfig)
-    control (Action)
-    state (GameState)
-end
 schema GameState
     Int8{0:31} current_sum,
     Int8{0:10} dealer_card,
@@ -16,6 +12,11 @@ schema BlackJackConfig
     Int8 episode_length,
     Int8 num_episodes,
     UInt8 deque_size
+end
+
+simulator blackjack_simulator(BlackJackConfig)
+    control (Action)
+    state (GameState)
 end
 
 concept high_score is classifier
