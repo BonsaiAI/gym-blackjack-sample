@@ -14,8 +14,8 @@ RECORDING_TIME = 40*60*60
 class BlackJackSimulator(GymSimulator):
 
     def __init__(self, env, skip_frame, record_path, render_env=False):
-        super().__init__(
-            env, skip_frame=skip_frame,
+        GymSimulator.__init__(
+            self, env, skip_frame=skip_frame,
             record_path=record_path, render_env=render_env)
 
     def get_state(self):

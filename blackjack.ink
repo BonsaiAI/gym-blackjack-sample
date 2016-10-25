@@ -5,7 +5,7 @@ schema GameState
 end
 
 schema Action
-    Int8{0, 1} action
+    Int8{0, 1} command
 end
 
 schema BlackJackConfig
@@ -15,7 +15,7 @@ schema BlackJackConfig
 end
 
 simulator blackjack_simulator(BlackJackConfig)
-    control (Action)
+    action (Action)
     state (GameState)
 end
 
