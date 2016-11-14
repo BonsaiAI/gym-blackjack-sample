@@ -18,12 +18,13 @@ class BlackJackSimulator(GymSimulator):
             self, env, skip_frame=skip_frame,
             record_path=record_path, render_env=render_env)
 
-    def get_state(self):
+    def advance(self, actions):
         # Step 1: Perform the action and update the game along with
         # the reward.
         average_reward = 0
         for i in range(self._skip_frame):
-            observation, reward, done, info = self.env.step(self._action)
+            observation, reward, done, info = self.env.step(
+                self.get_gym_action(actions))
             self._frame_count += 1
             average_reward += int(reward)
             self.gym_total_reward += int(reward)
@@ -45,18 +46,21 @@ class BlackJackSimulator(GymSimulator):
         current_frame = self.process_observation(observation)
         self._append_state(current_frame)
 
+        # Step 4: Check if we should reset
+        self._check_terminal(done)
+
+    def get_state(self):
         # We append all of the states in the deque by adding the rows.
         current_state = reduce(
             lambda accum, state: accum + state, self._state_deque)
 
-        # Step 4: Check if we should reset
-        self._check_terminal(done)
-
-        # Step 6: Convert thhe observation to an inkling schema.
+        # Convert the observation to an inkling schema.
         state_schema = self.get_state_schema(current_state)
-        return {"current_sum": int(state_schema[0]),
-                "dealer_card": int(state_schema[1]),
-                "usable_ace": int(state_schema[2])}
+        state_dict = {"current_sum": int(state_schema[0]),
+                      "dealer_card": int(state_schema[1]),
+                      "usable_ace": int(state_schema[2])}
+        return bonsai.simulator.SimState(state_dict, self._terminal)
+
 
 if __name__ == "__main__":
     env = gym.make(ENVIRONMENT)
