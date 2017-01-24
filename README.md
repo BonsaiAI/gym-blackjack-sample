@@ -10,15 +10,15 @@
 
 ### HOW TO TRAIN YOUR BRAIN
 1. If you haven't already created a BRAIN at the website, create one now:
-       `bonsai brain create <your_brain>`
+       `bonsai create <your_brain>`
 1. Load your Inkling file into your brain. Review our [Inkling Guide](http://docs.bons.ai/inkling-guide-pages/introduction) for help with Inkling.
-       `bonsai brain load <your_brain> blackjack.ink`
+       `bonsai load blackjack.ink`
 1. Enable training mode for your brain. Please note that training may take many hours.
-       `bonsai brain train start <your_brain>`
+       `bonsai train start`
 1. Connect a simulator for training. For inspiration, check out our [Mountain Car demo](https://github.com/BonsaiAI/gym-mountaincar-sample).
        `python blackjack_simulator.py --train-brain=<your_brain> --headless`
 1. When training has hit a sufficient accuracy, disable training mode.
-       `bonsai brain train stop <your_brain>`
+       `bonsai train stop`
 
 
 ### USE YOUR BRAIN

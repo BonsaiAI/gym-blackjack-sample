@@ -19,6 +19,11 @@ class BlackJackSimulator(GymSimulator):
             record_path=record_path, render_env=render_env)
 
     def advance(self, actions):
+        # Step 0: Check if we need to reset or move forward the episode.
+        if self._terminal:
+            self.reset()
+            return
+
         # Step 1: Perform the action and update the game along with
         # the reward.
         average_reward = 0
