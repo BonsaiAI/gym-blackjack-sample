@@ -1,9 +1,0 @@
-{
-    "files": [
-        "./"
-    ],
-    "training": {
-        "command": "python blackjack_simulator.py",
-        "simulator": "openai.gym.blackjack"
-    }
-}
