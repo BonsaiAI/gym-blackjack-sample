@@ -12,7 +12,7 @@
 1. If you haven't already created a BRAIN at the website, create one now:
        `bonsai create <your_brain>`
 1. Load your Inkling file into your brain. Review our [Inkling Guide](http://docs.bons.ai/inkling-guide-pages/introduction) for help with Inkling.
-       `bonsai load blackjack.ink`
+       `bonsai load`
 1. Enable training mode for your brain. Please note that training may take many hours.
        `bonsai train start`
 1. Connect a simulator for training. For inspiration, check out our [Mountain Car demo](https://github.com/BonsaiAI/gym-mountaincar-sample).
