@@ -1,25 +1,21 @@
 # gym-blackjack-sample
 
 ### INSTALLATION
-1. Review [requirements](http://docs.bons.ai/getting-started/lets-get-started) for installing the Bonsai CLI.
-1. Install the Bonsai Command Line Interface (CLI).
-       `pip install bonsai-cli`
-       `bonsai configure`
-1. Install the simulator's requirements:
+1. Review [install guide](http://docs.bons.ai/getting-started.html#install-prerequisites) for installing the Bonsai CLI.
+2. Install the simulator's requirements:
        `pip install -r requirements.txt`
 
 ### HOW TO TRAIN YOUR BRAIN
 1. If you haven't already created a BRAIN at the website, create one now:
        `bonsai create <your_brain>`
-1. Load your Inkling file into your brain. Review our [Inkling Guide](http://docs.bons.ai/inkling-guide-pages/introduction) for help with Inkling.
+2. Load your Inkling file into your brain. Review our [Inkling Guide](http://docs.bons.ai/inkling.html) for help with Inkling.
        `bonsai load`
-1. Enable training mode for your brain. Please note that training may take many hours.
+3. Enable training mode for your brain. Please note that training may take many hours.
        `bonsai train start`
-1. Connect a simulator for training. For inspiration, check out our [Mountain Car demo](https://github.com/BonsaiAI/gym-mountaincar-sample).
+4. Connect a simulator for training. For inspiration, check out our [Mountain Car demo](https://github.com/BonsaiAI/gym-mountaincar-sample).
        `python blackjack_simulator.py --train-brain=<your_brain> --headless`
-1. When training has hit a sufficient accuracy, disable training mode.
+5. When training has hit a sufficient accuracy, disable training mode.
        `bonsai train stop`
-
 
 ### USE YOUR BRAIN
 
