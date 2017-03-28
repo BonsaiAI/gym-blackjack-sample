@@ -1,14 +1,14 @@
 # gym-blackjack-sample
 
 ### INSTALLATION
-1. Review [install guide](http://docs.bons.ai/getting-started.html#install-prerequisites) for installing the Bonsai CLI.
+1. Review [install guide](http://docs.bons.ai/guides/getting-started.html#install-prerequisites) for installing the Bonsai CLI.
 2. Install the simulator's requirements:
        `pip install -r requirements.txt`
 
 ### HOW TO TRAIN YOUR BRAIN
 1. If you haven't already created a BRAIN at the website, create one now:
        `bonsai create <your_brain>`
-2. Load your Inkling file into your brain. Review our [Inkling Guide](http://docs.bons.ai/inkling.html) for help with Inkling.
+2. Load your Inkling file into your brain. Review our [Inkling Guide](http://docs.bons.ai/guides/inkling-guide.html) for help with Inkling.
        `bonsai load`
 3. Enable training mode for your brain. Please note that training may take many hours.
        `bonsai train start`
