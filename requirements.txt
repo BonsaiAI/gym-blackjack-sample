@@ -1,2 +1,2 @@
 bonsai-python>=0.9.0
-bonsai-gym-common>=0.5.1
+bonsai-gym-common>=0.5.3
