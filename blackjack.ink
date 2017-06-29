@@ -10,7 +10,6 @@ end
 
 schema BlackJackConfig
     Int8 episode_length,
-    Int8 num_episodes,
     UInt8 deque_size
 end
 
@@ -33,7 +32,6 @@ curriculum win_curriculum
         lesson win
             configure
                 constrain episode_length with Int8{-1},
-                constrain num_episodes with Int8{-1},
                 constrain deque_size with UInt8{1}
             until
                 maximize open_ai_gym_default_objective
