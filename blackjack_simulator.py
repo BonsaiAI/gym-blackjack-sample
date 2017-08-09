@@ -3,7 +3,7 @@ import time
 from functools import reduce
 
 import bonsai
-from bonsai_gym_common import GymSimulator
+from bonsai_gym_common import GymSimulator, logging_basic_config
 
 ENVIRONMENT = 'Blackjack-v0'
 RECORD_PATH = None
@@ -69,6 +69,7 @@ class BlackJackSimulator(GymSimulator):
 
 
 if __name__ == "__main__":
+    logging_basic_config()
     env = gym.make(ENVIRONMENT)
     simulator = BlackJackSimulator(env, SKIPPED_FRAME, RECORD_PATH)
     bonsai.run_for_training_or_prediction("blackjack_simulator", simulator)

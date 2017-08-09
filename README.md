@@ -1,23 +1,38 @@
-# gym-blackjack-sample
+# OpenAI Gym Blackjack Sample
 
-### INSTALLATION
-1. Review [install guide](http://docs.bons.ai/guides/getting-started.html#install-prerequisites) for installing the Bonsai CLI.
-2. Install the simulator's requirements:
+## WEB GUIDE
+
+If you're using the web interface, please follow the [quick start guide](http://docs.bons.ai/guides/getting-started.html).
+
+
+
+## LOCAL (CLI) GUIDE
+
+### CLI INSTALLATION
+1. Install the Bonsai CLI by following our [detailed CLI installation guide](http://docs.bons.ai/guides/cli-guide.html).
+
+### CREATE YOUR BRAIN
+1. Setup your BRAIN's local project folder.
+       `bonsai create <your_brain>`
+2. Run this command to install additional requirements for training your BRAIN:
        `pip install -r requirements.txt`
 
 ### HOW TO TRAIN YOUR BRAIN
-1. If you haven't already created a BRAIN at the website, create one now:
-       `bonsai create <your_brain>`
-2. Load your Inkling file into your brain. Review our [Inkling Guide](http://docs.bons.ai/guides/inkling-guide.html) for help with Inkling.
+1. Upload Inkling and simulation files to the Bonsai server with one command.
        `bonsai push`
-3. Enable training mode for your brain. Please note that training may take many hours.
+2. Run this command to start training mode for your BRAIN.
        `bonsai train start`
-4. Connect a simulator for training. For inspiration, check out our [Mountain Car demo](https://github.com/BonsaiAI/gym-mountaincar-sample).
-       `python blackjack_simulator.py --train-brain=<your_brain> --headless`
-5. When training has hit a sufficient accuracy, disable training mode.
+   If you want to run this remotely on the Bonsai server use the `--remote` option.
+       `bonsai train start --remote`
+3. Connect the OpenAI Gym simulator for training. Use the `--headless` option to hide the graphical output.
+       `python acrobot_simulator.py --train-brain=<your_brain> --headless`
+4. When training has hit a sufficient accuracy for prediction, after a few minutes, stop training your BRAIN.
        `bonsai train stop`
 
-### USE YOUR BRAIN
-
-1. Run the simulator using predictions from your brain.
+### GET PREDICTIONS
+1. Run the simulator using predictions from your BRAIN. You can now see AI playing the game!
        `python blackjack_simulator.py --predict-brain=<your_brain> --predict-version=latest`
+
+
+## Questions about Inkling?
+See our [Inkling Guide](http://docs.bons.ai/guides/inkling-guide.html) and [Inkling Reference](http://docs.bons.ai/references/inkling-reference.html) for help.
